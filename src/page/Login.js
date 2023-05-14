@@ -7,7 +7,7 @@ const Loign = ({ setAuthenticate }) => {
     const navigate = useNavigate();
 
     const auth = async (email, password) => {
-        const url = `http://localhost:4000/users`;
+        const url = `https://my-json-server.typicode.com/kimbboyong/react-hnm/users`;
         const response = await fetch(url);
         const data = await response.json();
 
@@ -23,7 +23,7 @@ const Loign = ({ setAuthenticate }) => {
         event.preventDefault();
 
         const isLogin = await auth(event.target.email.value, event.target.password.value);
-        isLogin ? navigate('/') : alert('회원아님 ㅋ')
+        isLogin ? navigate('/') : alert('회원정보가 일치하지 않습니다.')
     }
 
     return (
@@ -33,21 +33,22 @@ const Loign = ({ setAuthenticate }) => {
                     <Form.Label>Email address</Form.Label>
                     <Form.Control type="email" name="email" placeholder="Enter email" />
                     <Form.Text className="text-muted">
-                        We'll never share your email with anyone else.
+                        admin1@admin.com
                     </Form.Text>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" name="password" placeholder="Password" />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
+                    <Form.Text className="text-muted">
+                        1234
+                    </Form.Text>
                 </Form.Group>
                 <Button variant="danger" type="submit">
                     로그인
                 </Button>
             </Form>
+
         </Container>
     )
 }

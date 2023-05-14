@@ -33,7 +33,7 @@ function App() {
 
   return (
     <div className='container'>
-      <Navbar />
+      <Navbar authenticate={authenticate} />
 
       <Routes>
         <Route path='/' element={<ProductAll />} />

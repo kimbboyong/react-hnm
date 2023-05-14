@@ -5,7 +5,8 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 import logo from '../src_assets/logo.png';
 
-const Navbar = () => {
+const Navbar = (authenticate) => {
+
 
     const navigate = useNavigate();
 
@@ -29,6 +30,7 @@ const Navbar = () => {
         navigate('/');
     }
 
+
     return (
         <div>
 
@@ -39,7 +41,6 @@ const Navbar = () => {
                         <span>로그인</span>
                     </div>
                 </div>
-
                 <div className='logo'>
                     <figure>
                         <img src={logo} alt="Logo" onClick={goHome} />
@@ -55,7 +56,7 @@ const Navbar = () => {
                 </div>
 
                 <div className='search'>
-                    <FontAwesomeIcon icon={faSearch} />
+                    <FontAwesomeIcon icon={faSearch} className="searchIcon" />
                     <input type="text" onKeyPress={(event) => search(event)} />
                 </div>
             </div>
