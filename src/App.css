@@ -41,11 +41,13 @@ li {
 }
 
 .login_btn {
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-    margin-top: 20px;
+    position: absolute;
+    top: 10px;
+    right: 15px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
 .logo {
@@ -74,8 +76,8 @@ li {
 
 .search {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 10px;
+    left: 15px;
 }
 
 .search input {
@@ -127,7 +129,115 @@ li {
 
 /* detail */
 
+.product_inner {
+    margin-bottom: 30px;
+}
+
 .product_img {
     display: flex;
     justify-content: flex-end;
+}
+
+.product_title {
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.product_price {
+    font-size: 1.25em;
+}
+
+.add_button {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.side-menu {
+    display: none;
+}
+
+.burger-menu {
+    display: none;
+}
+
+@media screen and (max-width:768px) {
+    .hide {
+        visibility: visible;
+        font-size: 20px;
+        position: absolute;
+        left: 15px;
+    }
+
+    .hide svg {
+        margin-top: 10px;
+        cursor: pointer;
+    }
+
+    .burger-menu {
+        display: block;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .search {
+        display: none;
+    }
+
+    .side-menu {
+        display: block;
+        height: 100%;
+        width: 250px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: burlywood;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+    }
+
+    .side-menu-list button {
+        margin: 5px;
+        border: none;
+        background: none;
+        width: 120px;
+    }
+
+    .side-menu .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+        border: none;
+        background: none;
+    }
+
+    .side-menu-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .side-menu-list button:hover {
+        background-color: beige;
+        border-radius: 3px;
+    }
+
+    .card_wrap li figure {
+        margin: 0 auto;
+        box-shadow: 3px 1px 4px rgba(0, 0, 0, 0.30);
+    }
+
+    .card_wrap li:hover figure {
+        transform: scale(1);
+    }
+
+    .card_wrap li .txt_area {
+        text-align: center;
+        margin-top: 15px;
+    }
 }

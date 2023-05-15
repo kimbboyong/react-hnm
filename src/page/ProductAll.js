@@ -11,7 +11,6 @@ const ProductAll = () => {
 
     const getProducts = async () => {
         let searchQuery = query.get('q') || "";
-        console.log('searchQuery?', searchQuery);
         let url = `https://my-json-server.typicode.com/kimbboyong/react-hnm/products?q=${searchQuery}`;
         let reponse = await fetch(url);
         let data = await reponse.json();
@@ -27,7 +26,7 @@ const ProductAll = () => {
             <Container>
                 <Row>
                     {productList.map((menu, index) => (
-                        <Col key={index} lg={3}><ProductCard item={menu} /></Col>
+                        <Col key={index} xs={12} md={6} lg={3} ><ProductCard item={menu} /></Col>
                     ))}
                 </Row>
             </Container>

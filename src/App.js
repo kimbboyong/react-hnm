@@ -8,7 +8,6 @@ import { Routes, Route } from 'react-router-dom'
 
 import ProductAll from './page/ProductAll';
 import Login from './page/Login';
-import ProductDetial from './page/ProductDetial';
 
 import Navbar from './component/Navbar';
 import PrivateRoutes from './routes/PrivateRoutes';
@@ -27,13 +26,13 @@ function App() {
   const [authenticate, setAuthenticate] = useState(false);
 
   useEffect(() => {
-    // console.log('asdasdasdasd', authenticate);
+    console.log(authenticate);
   }, [authenticate])
 
 
   return (
     <div className='container'>
-      <Navbar authenticate={authenticate} />
+      <Navbar authenticate={authenticate} setAuthenticate={setAuthenticate} />
 
       <Routes>
         <Route path='/' element={<ProductAll />} />
